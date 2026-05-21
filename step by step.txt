@@ -1,0 +1,6 @@
+Day 1:
+- saya memasangkan appwrite dari appwrite.io, mengikuti cara pemasangannya (Docs Flutter), 
+- modifikasi AndroidManifest, 
+- pubspec.yaml menambahkan depedensi, 
+- membuat folder lib/config/appwrite.dart yang isinya konfigurasi untuk koneksi ke Appwrite pada project flutter kita (menyimpan endpoint, projectId, melakukan inisialisasi Client, dan penghubung dengan backend Appwrite)
+- memodifikasi file main.dart untuk dapat mengirimkan ping ke Appwrite
