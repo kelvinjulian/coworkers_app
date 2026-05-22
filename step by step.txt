@@ -1,6 +1,25 @@
-Day 1:
+Day 1 (Setup Appwrite):
 - saya memasangkan appwrite dari appwrite.io, mengikuti cara pemasangannya (Docs Flutter), 
 - modifikasi AndroidManifest, 
 - pubspec.yaml menambahkan depedensi, 
 - membuat folder lib/config/appwrite.dart yang isinya konfigurasi untuk koneksi ke Appwrite pada project flutter kita (menyimpan endpoint, projectId, melakukan inisialisasi Client, dan penghubung dengan backend Appwrite)
 - memodifikasi file main.dart untuk dapat mengirimkan ping ke Appwrite
+
+Day 2 (Authentication & Database (Users, Workers, Booking)):
+- membaca dokumentasi Auth account flutter di appwrite
+- modifikasi file appwrite.dart, mendaftarkan modul account dari appwrite (fitur auth account)
+- mengaktifkan system di awal (main.dart):
+	- WidgetsFlutterBinding.ensureInitialized() digunakan untuk memastikan mesin internal Flutter siap berjalan 		sebelum aplikasi utama muncul.
+	- Appwrite.init() memastikan konfigurasi server Appwrite dan modul akun tadi langsung aktif dan siap digunakan 	di halaman mana pun begitu aplikasi pertama kali dibuka.
+- create database di appwrite
+- modifikasi code appwrite, deklarasi variabel untuk menyimpan ID dan nama tabel dari appwrite
+- (Users) menambahkan kolom name dan email di table Users
+- update permissions di appwrite, menambahkan role Any, centang Create
+- menambahkan role Users, centang semua
+- mencoba menambahkan rows untuk table Users
+- (Workers) menambahkan kolom image, name, location, experience, hour_rate, rating, rating_count, status, about, strengths, category
+- atur setting, tambah role Users (centang semua) kemudian update
+- bikin 2 index satu atribut (category), dan 2 atribut (category_and_status)
+- (Booking) menambahkan atribut user_id, worker_id, date, hiring_duration, subtotal, insurance, tax, platform_fee, grand_total, pay_with, status
+- atur setting, tambahkan role Users dan centang semua, kemudian update
+- buat index user_id_and_status, dan index worker_id_and_status
